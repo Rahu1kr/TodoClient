@@ -18,7 +18,7 @@ const Login = ({ setIsAuthenticated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/api/user/login', {
+      const response = await fetch('http://13.201.128.190:8000/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ const Login = ({ setIsAuthenticated }) => {
         setIsError(true);
       }
     } catch (error) {
-      setMessage('Login failed. Please try again.');
+      setMessage('Login failed. Please try again.:,', error);
       setIsError(true);
     }
   };

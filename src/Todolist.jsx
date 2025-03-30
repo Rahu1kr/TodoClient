@@ -10,7 +10,7 @@ const Todolist = () => {
     useEffect(() => {
         const fetchTodos = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/todo/", {
+                const response = await fetch("http://13.201.128.190:8000/api/todo/", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 if (!response.ok) throw new Error('Failed to fetch todos');
@@ -27,7 +27,7 @@ const Todolist = () => {
         if (!inputValue.trim()) return;
 
         try {
-            const response = await fetch("http://localhost:8000/api/todo/create", {
+            const response = await fetch("http://13.201.128.190:8000/api/todo/create", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json", 
@@ -52,7 +52,7 @@ const Todolist = () => {
 
     const deleteTodo = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8000/api/todo/delete/${id}`, {
+            const response = await fetch(`http://13.201.128.190:8000/api/todo/delete/${id}`, {
                 method: "DELETE",
                 headers: { "Authorization": `Bearer ${token}` }
             });
@@ -67,7 +67,7 @@ const Todolist = () => {
 
     const updateTodo = async (id, newTitle) => {
         try {
-            const response = await fetch(`http://localhost:8000/api/todo/update/${id}`, {
+            const response = await fetch(`http://13.201.128.190:8000/api/todo/update/${id}`, {
                 method: "PUT",
                 headers: { 
                     "Content-Type": "application/json", 
@@ -89,7 +89,7 @@ const Todolist = () => {
 
     const doneTodo = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8000/api/todo/update/${id}`, {
+            const response = await fetch(`http://13.201.128.190:8000/api/todo/update/${id}`, {
                 method: "PUT",
                 headers: { 
                     "Content-Type": "application/json", 

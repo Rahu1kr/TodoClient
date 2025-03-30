@@ -19,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/api/user/register', {
+      const response = await fetch('http://13.201.128.190:8000/api/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const Register = () => {
         setIsError(true);
       }
     } catch (error) {
-      setMessage('Registration failed. Please try again.');
+      setMessage('Registration failed. Please try again.:', error);
       setIsError(true);
     }
   };
